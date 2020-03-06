@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Message Maker</title>
+</head>
+<style>
+    .body {
+
+        background-color: black;
+
+    }
+
+
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-items: stretch;
+        : 10px;
+
+    }
+
+    .container>div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 4px solid black;
+        padding: 10px;
+        padding-right: 20px;
+        margin: 10px;
+    }
+
+
+    .div2 {
+        display: flex;
+        flex-direction: column !important;
+
+
+    }
+</style>
+
+
+
+
+
+<body>
+    <main>
+
+        <div class="container">
+            <div>
+                <form>
+                    <label for="title">Title:</label><br>
+                    <input type="text" id="title" name="title"><br>
+                    <label for="title_color">Select Color:</label><br>
+                    <input type="color" id="title_color" name="title_color"><br>
+                    <label for="message"> Write Message:</label><br>
+                    <textarea type="text" id="message" name="paragraph_text" cols="50" rows="10"></textarea>
+                    <label for="message_color">Select Color:</label><br>
+                    <input type="color" id="message_color" name="message_color"><br>
+                    <input type="submit" value="submit">
+                </form>
+            </div>
+
+
+            <div class="div2">
+                <label for="title_display">Title:</label><br>
+                <h1 id='title_display'></h1>
+                <label for="message_display">Message:</label><br>
+                <p id='message_display'></p>
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </main>
+
+    <!--Script-->
+    <script>
+        /* g set variables for id */
+        const title = document.getElementById("title")
+        const title_color = document.getElementById("title_color")
+        const message = document.getElementById("message")
+        const message_color = document.getElementById("message_color")
+        const title_display = document.getElementById('title_display')
+        const message_display = document.getElementById('message_display')
+
+
+
+
+        /*event listeners */
+
+
+
+        title.addEventListener('change', updateTitle);
+        message.addEventListener('change', updateMessage);
+        title_color.addEventListener('change', changeTitlecolor);
+        message_color.addEventListener('change', changeMessagecolor)
+
+        /* function */
+        function updateTitle(e) {
+            title_display.textContent = e.target.value;
+        }
+
+        function updateMessage(e) {
+            message_display.textContent = e.target.value;
+        }
+
+        function changeTitlecolor(e) {
+            title_display.style.color = e.target.value;
+        }
+
+        function changeMessagecolor(e) {
+            message_display.style.color = e.target.value;
+        }
+    </script>
+
+</body>
+
+</html>
